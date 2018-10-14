@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+       xmlns:aop="http://www.springframework.org/schema/aop">
+
+
+    <bean id="helloWorldImpl1" class="com.server.spring.spring08.HelloWorldImpl1"></bean>
+    <bean id="helloWorldImpl2" class="com.server.spring.spring08.HelloWorldImpl2"></bean>
+
+    <!--横切关注点-->
+    <bean id="timeHandler" class="com.server.spring.spring08.TimeHandler"></bean>
+    <bean id="logHandler" class="com.server.spring.spring08.LogHandler"></bean>
+
+    <aop:config proxy-target-class="true"><!--AOP定义开始-->
+
+        <!--定义切面-->
+        <aop:aspect id="timeHandlerSpect" ref="timeHandler">
+
+            <!--定义切入点-->
+            <aop:pointcut id="addTime" expression="execution(* com.server.spring.spring08.*.*(..))"/>
+
+            <!--前置通知-->
+            <aop:before method="printTime" pointcut-ref="addTime"/>
+
+            <!--后置通知(不管方法是否执行成功)-->
+            <aop:after method="printTime" pointcut-ref="addTime"/>
+        </aop:aspect>
+
+        <!--<aop:aspect id="logHandlerSpect" ref="logHandler">
+            <aop:pointcut id="addLogger" expression="execution(* com.server.spring.spring08.*.*(..))"/>
+            <aop:before method="LogBefore" pointcut-ref="addLogger"/>
+            <aop:after method="LogAfter" pointcut-ref="addLogger"/>
+        </aop:aspect>-->
+
+    </aop:config>
+
+</beans>

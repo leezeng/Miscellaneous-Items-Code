@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+    <bean id="cyxPeople" class="com.server.spring.spring01.CYXPeople">
+        <property name="name" value="CYX"></property>
+        <constructor-arg ref="spellChecker"/>
+    </bean>
+
+    <bean id="spellChecker" class="com.server.spring.spring01.SpellChecker">
+
+        <!--字段属性注入-->
+        <!--<property name="name" value="CYX9999"></property>
+        <property name="address" value="CYX9999"></property>-->
+
+        <!--构造器 字段属性注入-->
+        <constructor-arg index="0" value="cyx000"/>
+        <constructor-arg index="1" value="北京"/>
+        <constructor-arg index="2">
+            <list>
+                <value>123</value>
+                <value>456</value>
+                <value>789</value>
+                <value>098</value>
+                <value>765</value>
+                <value>4321</value>
+            </list>
+        </constructor-arg>
+
+    </bean>
+
+</beans>

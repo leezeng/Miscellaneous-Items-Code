@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <!--定义一个对象，通过占位符从配置文件中读取配置-->
+    <bean id="onePeople" class="com.server.spring.spring02.OnePeople">
+        <property name="name">
+            <value>${test2.name}</value>
+        </property>
+
+        <property name="age">
+            <value>${test2.age}</value>
+        </property>
+
+        <property name="address">
+            <value>${test2.address}</value>
+        </property>
+    </bean>
+
+    <!--指定外部properties配置文件-->
+    <bean id="propertiesConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>./conf/spring/spring02/test2.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+</beans>

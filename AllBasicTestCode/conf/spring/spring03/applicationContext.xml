@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+    <!--指定外部properties配置文件-->
+    <bean id="customizedPropertyConfigurer" class="com.server.spring.spring03.CustomizedPropertyConfigurer">
+
+        <property name="locations">
+            <list>
+                <value>./conf/spring/spring03/test3.properties</value>
+                <value>./conf/spring/spring03/test3-1.properties</value>
+            </list>
+        </property>
+
+        <property name="fileEncoding" value="utf-8"/>
+
+    </bean>
+
+
+</beans>
