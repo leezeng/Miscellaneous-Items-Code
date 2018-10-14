@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.server.mapper.RealTimeNewsMapper">
+
+    <!-- 实时新闻-插入一条数据 -->
+    <insert id="insertNewsToRealTimeNewsInfo" parameterType="realtimenewsdetails">
+        INSERT INTO real_time_news_info(
+        uniqueMark,
+        news_id,
+        title,
+        source,
+        gmt_publish,
+        hot_index,
+        category,
+        thumbnail_img,
+        url,
+        summary_create_time,
+        summary_update_time,
+        summary,
+        content)
+        values(
+        #{uniqueMark},
+        #{news_id},
+        #{title},
+        #{source},
+        #{gmt_publish},
+        #{hot_index},
+        #{category},
+        #{thumbnail_img},
+        #{url},
+        #{summary_create_time},
+        #{summary_update_time},
+        #{summary},
+        #{content})
+    </insert>
+
+    <!--根据content查询-->
+    <select id="findAllNewsWhereByContent" resultMap="findAllNewsWhereByContentResultMap" parameterType="string">
+        select news_id , gmt_publish , url  from real_time_news_info where content = #{content};
+    </select>
+
+    <resultMap id="findAllNewsWhereByContentResultMap" type="com.server.po.RealTimeNewsDetailsPO">
+        <id column="news_id" property="news_id"/>
+        <result column="gmt_publish" property="gmt_publish"/>
+        <result column="url" property="url"/>
+    </resultMap>
+
+    <!--更新新闻信息-->
+    <update id="updateNewsToRealTimeNewsInfo" parameterType="realtimenewsdetails">
+        update real_time_news_info SET gmt_publish = #{gmt_publish} , content = #{content} where news_id = #{news_id};
+    </update>
+
+    <!--根据news_id查询-->
+    <select id="findAllNewsWhereByNewsId" resultMap="findAllNewsWhereByNewsIdResultMap" parameterType="string">
+        select news_id , gmt_publish , url  from real_time_news_info where news_id = #{news_id};
+    </select>
+
+    <resultMap id="findAllNewsWhereByNewsIdResultMap" type="com.server.po.RealTimeNewsDetailsPO">
+        <id column="news_id" property="news_id"/>
+    </resultMap>
+
+</mapper>
