@@ -34,6 +34,10 @@ import java.util.Map;
 /**
  * 本地Swagger:
  * http://127.0.0.1:8083/swagger/index.html#/
+ *
+ * 注意：
+ * https://github.com/swagger-api/swagger-ui
+ *
  * <p>
  * 参考：
  * https://www.cnblogs.com/cq-jiang/p/8457770.html
