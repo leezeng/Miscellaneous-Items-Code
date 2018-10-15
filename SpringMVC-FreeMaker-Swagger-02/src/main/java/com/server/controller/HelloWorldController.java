@@ -34,9 +34,9 @@ import java.util.Map;
 /**
  * 本地Swagger:
  * http://127.0.0.1:8083/swagger/index.html#/
- *
+ * <p>
  * 注意：
- * https://github.com/swagger-api/swagger-ui
+ * https://github.com/swagger-api/swagger-ui 下载后dist放入webapp-swagger目录
  *
  * <p>
  * 参考：
