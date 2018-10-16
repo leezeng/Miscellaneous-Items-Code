@@ -32,21 +32,25 @@ import java.util.Map;
 
 
 /**
+ * 初始页面：
+ * http://localhost:8090/home
+ * <p>
  * 本地Swagger:
- * http://127.0.0.1:8083/swagger/index.html#/
+ * http://127.0.0.1:8085/swagger/index.html#/
  * <p>
  * 注意：
  * https://github.com/swagger-api/swagger-ui 下载后dist放入webapp-swagger目录
- *
  * <p>
  * 参考：
  * https://www.cnblogs.com/cq-jiang/p/8457770.html
+ * <p>
+ * '@Api':swagger分类标题注解
  *
  * @author CYX
  * @create 2018-04-25-6:35
  */
 @Controller
-@Api(tags = "首页") //swagger分类标题注解
+@Api(tags = "Demo首页")
 public class HelloWorldController {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
@@ -58,17 +62,19 @@ public class HelloWorldController {
 
     /**
      * 进入初始页面
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param model
      * @return
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功,展示首页,其它为错误", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "GET", value = "初始页面")
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String sayHelloWorld(Model model) {
         logger.info("sayHelloWorld");
         model.addAttribute("information", "哈哈哈哈哈哈");
@@ -77,16 +83,18 @@ public class HelloWorldController {
 
     /**
      * 测试ajax,接收后台数据-替换HTML标签
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param userName
      * @param request
      * @param response
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "GET", value = "测试ajax,接收后台数据-替换HTML标签")
     @RequestMapping(value = "/getInformation", method = RequestMethod.GET)
     public void getInformation(String userName, HttpServletRequest request, HttpServletResponse response) {
@@ -101,16 +109,18 @@ public class HelloWorldController {
 
     /**
      * 测试数据提交-多个字段封装对象提交
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param peopleDTO
      * @param request
      * @param response
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "POST", value = "测试数据提交-多个字段封装对象提交")
     @RequestMapping(value = "/testFormSubmission", method = RequestMethod.POST)
     public void testFormSubmission(@RequestBody PeopleDTO peopleDTO, HttpServletRequest request, HttpServletResponse response) {
@@ -122,17 +132,19 @@ public class HelloWorldController {
 
     /**
      * 测试表单提交-多个字段提交
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param userName
      * @param userAge
      * @param userAddress
      * @param response
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "POST", value = "测试表单提交-多个字段提交")
     @RequestMapping(value = "/testFormSubmission2", method = RequestMethod.POST)
     public void testFormSubmission2(String userName, String userAge, String userAddress, HttpServletResponse response) {
@@ -144,15 +156,17 @@ public class HelloWorldController {
 
     /**
      * 测试ajax调用后台，接口后台页面，简单数据
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param request
      * @param response
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "GET", value = "测试ajax调用后台，接口后台页面，简单数据")
     @RequestMapping(value = "/backToThePage", method = RequestMethod.GET)
     public void backToThePage(HttpServletRequest request, HttpServletResponse response) {
@@ -169,15 +183,17 @@ public class HelloWorldController {
 
     /**
      * 测试ajax调用后台，接口后台页面，复杂数据
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param request
      * @param response
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "GET", value = "测试ajax调用后台，接口后台页面，复杂数据")
     @RequestMapping(value = "/backToThePageComple", method = RequestMethod.GET)
     public void backToThePageComple(HttpServletRequest request, HttpServletResponse response) {
@@ -209,16 +225,18 @@ public class HelloWorldController {
 
     /**
      * 测试SpringMVC文件上传
+     * <p>
+     * '@ApiResponses':swagger返回值注解
+     * <p>
+     * '@ApiOperation':swagger当前接口注解
      *
      * @param multipartFile
      * @param request
      * @return
      */
-    //swagger返回值注解
     @ApiResponses(value = {
             @ApiResponse(code = 500, message = "系统错误"),
             @ApiResponse(code = 200, message = "0-成功", response = String.class)})
-    //swagger 当前接口注解
     @ApiOperation(httpMethod = "POST", value = "测试SpringMVC文件上传")
     @RequestMapping(value = "/upload.do")
     public String uploads(@RequestParam(value = "file", required = false) MultipartFile multipartFile, HttpServletRequest request) {
@@ -236,7 +254,7 @@ public class HelloWorldController {
             String fileResult = FileUtils.readFileToString(targetFile, "UTF-8");
             logger.info(fileResult);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
         return "hello.ftl";
     }
