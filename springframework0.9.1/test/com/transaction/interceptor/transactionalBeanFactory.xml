@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC  "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- Simple target -->
+	<bean id="target" class="com.beans.TestBean">
+		<property name="name"><value>custom</value></property>
+		<property name="age"><value>666</value></property>
+	</bean>
+	
+
+	
+	<bean id="debugInterceptor" class="com.aop.interceptor.DebugInterceptor">
+	</bean>
+	
+	<bean id="mockMan" class="com.transaction.interceptor.PlatformTransactionManagerFacade">
+	</bean>
+	
+	<bean id="txInterceptor" class="com.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager"><ref bean="mockMan"/></property>
+		<property name="transactionAttributeSource">
+			<value>com.beans.ITestBean.setAge=PROPAGATION_REQUIRED</value>
+		</property>
+	</bean>
+	
+	<bean id="txtest" 
+			class="com.aop.framework.ProxyFactoryBean"
+	>	
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.beans.ITestBean</value>
+			</list>
+		</property>		
+
+		<property name="interceptorNames">
+			<list>
+				<value>txInterceptor</value>
+				<value>target</value>
+			</list>
+		</property>		
+	</bean>
+	
+
+</beans>		
+	
+	
