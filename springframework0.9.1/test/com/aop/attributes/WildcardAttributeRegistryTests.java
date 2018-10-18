@@ -7,10 +7,7 @@ package com.aop.attributes;
 
 import java.io.InputStream;
 import java.lang.reflect.Method;
-
 import org.aopalliance.intercept.AttributeRegistry;
-
-
 import junit.framework.TestCase;
 
 import com.beans.TestBean;

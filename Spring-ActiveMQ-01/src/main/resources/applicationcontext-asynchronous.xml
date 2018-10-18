@@ -59,7 +59,7 @@
     </bean>
 
     <!--异步监听-自定义 -->
-    <bean id="myMessageListener" class="com.sa.server.service.mq.listener.MQMessageListener"></bean>
+    <bean id="myMessageListener" class="com.server.mq.listener.MQMessageListener"></bean>
 
     <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="jmsFactory" />
