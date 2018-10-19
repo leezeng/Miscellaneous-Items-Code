@@ -28,8 +28,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.tests.sample.beans.HasMap;
 import org.springframework.tests.sample.beans.TestBean;
 
-import java.util.*;
-
 import static org.junit.Assert.*;
 
 /**

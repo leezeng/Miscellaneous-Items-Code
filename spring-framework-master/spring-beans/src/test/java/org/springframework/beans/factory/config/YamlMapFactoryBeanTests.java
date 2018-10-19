@@ -16,16 +16,15 @@
 
 package org.springframework.beans.factory.config;
 
+import org.junit.Test;
+import org.springframework.core.io.AbstractResource;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.FileSystemResource;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import org.junit.Test;
-
-import org.springframework.core.io.AbstractResource;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.FileSystemResource;
 
 import static org.junit.Assert.*;
 

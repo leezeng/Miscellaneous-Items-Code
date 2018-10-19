@@ -26,7 +26,6 @@ import org.springframework.tests.sample.beans.GenericSetOfIntegerBean;
 import org.springframework.tests.sample.beans.TestBean;
 
 import java.net.MalformedURLException;
-import java.util.*;
 
 import static org.junit.Assert.*;
 

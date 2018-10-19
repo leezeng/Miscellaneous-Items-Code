@@ -16,18 +16,17 @@
 
 package org.springframework.beans.factory.config;
 
-import java.util.Map;
-import java.util.Properties;
-
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.ClassPathResource;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.scanner.ScannerException;
 
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.ClassPathResource;
+import java.util.Map;
+import java.util.Properties;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;

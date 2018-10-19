@@ -16,9 +16,9 @@
 
 package org.springframework.beans.support;
 
-import java.util.Comparator;
-
 import org.junit.Test;
+
+import java.util.Comparator;
 
 import static org.junit.Assert.*;
 

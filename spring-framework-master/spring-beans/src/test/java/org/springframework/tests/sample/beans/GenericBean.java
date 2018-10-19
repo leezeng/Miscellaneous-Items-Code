@@ -18,8 +18,6 @@ package org.springframework.tests.sample.beans;
 
 import org.springframework.core.io.Resource;
 
-import java.util.*;
-
 /**
  * @author Juergen Hoeller
  */

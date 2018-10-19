@@ -16,14 +16,13 @@
 
 package org.springframework.beans.factory.config;
 
-import java.sql.Connection;
-
 import org.junit.Test;
-
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.core.io.Resource;
 import org.springframework.tests.sample.beans.TestBean;
+
+import java.sql.Connection;
 
 import static org.junit.Assert.*;
 import static org.springframework.tests.TestResourceUtils.*;
