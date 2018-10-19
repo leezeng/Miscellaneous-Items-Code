@@ -16,14 +16,10 @@
 
 package org.springframework.messaging.handler.annotation.support;
 
-import java.lang.reflect.Method;
-import java.util.Locale;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
 import org.springframework.core.MethodParameter;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
@@ -32,6 +28,9 @@ import org.springframework.messaging.converter.MessageConverter;
 import org.springframework.messaging.support.ErrorMessage;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.messaging.support.MessageBuilder;
+
+import java.lang.reflect.Method;
+import java.util.Locale;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

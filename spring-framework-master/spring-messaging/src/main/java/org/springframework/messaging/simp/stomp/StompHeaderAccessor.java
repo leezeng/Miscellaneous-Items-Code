@@ -16,16 +16,6 @@
 
 package org.springframework.messaging.simp.stomp;
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.security.Principal;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicLong;
-
 import org.springframework.lang.Nullable;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
@@ -36,6 +26,16 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.MimeType;
 import org.springframework.util.MimeTypeUtils;
 import org.springframework.util.StringUtils;
+
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.Principal;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * A {@code MessageHeaderAccessor} to use when creating a {@code Message} from
