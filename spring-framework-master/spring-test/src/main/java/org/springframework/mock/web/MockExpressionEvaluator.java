@@ -16,10 +16,10 @@
 
 package org.springframework.mock.web;
 
+import org.apache.taglibs.standard.lang.support.ExpressionEvaluatorManager;
+
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
-
-import org.apache.taglibs.standard.lang.support.ExpressionEvaluatorManager;
 
 /**
  * Mock implementation of the JSP 2.0 {@link javax.servlet.jsp.el.ExpressionEvaluator}
