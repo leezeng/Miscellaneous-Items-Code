@@ -16,16 +16,15 @@
 
 package org.springframework.cache.interceptor;
 
-import java.util.Arrays;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.junit.Test;
-
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.junit.Assert.*;
 

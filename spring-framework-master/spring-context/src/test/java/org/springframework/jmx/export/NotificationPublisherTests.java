@@ -23,8 +23,6 @@ import org.springframework.jmx.export.notification.NotificationPublisher;
 import org.springframework.jmx.export.notification.NotificationPublisherAware;
 import org.springframework.jmx.support.ObjectNameManager;
 
-import javax.management.*;
-
 import static org.junit.Assert.*;
 
 /**

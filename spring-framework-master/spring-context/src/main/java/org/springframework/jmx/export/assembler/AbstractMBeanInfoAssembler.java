@@ -16,6 +16,9 @@
 
 package org.springframework.jmx.export.assembler;
 
+import org.springframework.aop.support.AopUtils;
+import org.springframework.jmx.support.JmxUtils;
+
 import javax.management.Descriptor;
 import javax.management.JMException;
 import javax.management.modelmbean.ModelMBeanAttributeInfo;
@@ -24,9 +27,6 @@ import javax.management.modelmbean.ModelMBeanInfo;
 import javax.management.modelmbean.ModelMBeanInfoSupport;
 import javax.management.modelmbean.ModelMBeanNotificationInfo;
 import javax.management.modelmbean.ModelMBeanOperationInfo;
-
-import org.springframework.aop.support.AopUtils;
-import org.springframework.jmx.support.JmxUtils;
 
 /**
  * Abstract implementation of the {@code MBeanInfoAssembler} interface
