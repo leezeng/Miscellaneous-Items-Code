@@ -1,0 +1,7 @@
+/**
+ * Defines the Spring JDBC configuration namespace.
+ */
+@NonNullApi
+@NonNullFields
+package org.springframework.jdbc.config;
+
