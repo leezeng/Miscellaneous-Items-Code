@@ -16,10 +16,10 @@
 
 package org.springframework.web.socket;
 
-import java.util.List;
-
 import org.hamcrest.Matchers;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
