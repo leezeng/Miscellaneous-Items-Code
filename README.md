@@ -56,3 +56,6 @@ Java语言相关项目代码(包含个人项目、测试代码)
     
     Spring源码项目，用于学习Spring时debug、分析使用
       
+### JVMCode
+    
+    JVM相关Code，包含代码、JVM运行时内存区域visio图等...
