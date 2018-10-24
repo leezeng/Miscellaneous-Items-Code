@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author CYX
  */
-public class OutOfMemoryErrorApp {
+public class HeapOOMErrorApp {
 
     public static void main(String[] args) {
 
