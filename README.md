@@ -1,5 +1,5 @@
-# Java-Language-Code
-Java语言相关项目代码(包含个人项目、测试代码)
+# Miscellaneous-Items-Code
+个人杂七杂八的项目代码(包含个人项目、测试代码)
 
 ### 1、01-SpringBoot-Demo
 
