@@ -1,4 +1,4 @@
-package com.server;
+package com.server.algorithm;
 
 /**
  * 引用计数器算法
