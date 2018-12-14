@@ -19,23 +19,29 @@ package org.springframework.context;
 /**
  * Interface that encapsulates event publication functionality.
  * Serves as super-interface for ApplicationContext.
+ * <p>
+ * 封装事件发布功能的接口。 用作ApplicationContext的超级接口。
  *
  * @author Juergen Hoeller
- * @since 1.1.1
  * @see ApplicationContext
  * @see ApplicationEventPublisherAware
  * @see org.springframework.context.ApplicationEvent
  * @see org.springframework.context.event.EventPublicationInterceptor
+ * @since 1.1.1
  */
 public interface ApplicationEventPublisher {
 
-	/**
-	 * Notify all listeners registered with this application of an application
-	 * event. Events may be framework events (such as RequestHandledEvent)
-	 * or application-specific events.
-	 * @param event the event to publish
-	 * @see org.springframework.web.context.support.RequestHandledEvent
-	 */
-	void publishEvent(ApplicationEvent event);
+    /**
+     * Notify all listeners registered with this application of an application
+     * event. Events may be framework events (such as RequestHandledEvent)
+     * or application-specific events.
+     * <p>
+     * 通知在此应用程序中注册的应用程序事件的所有侦听器。
+     * 事件可以是框架事件（例如RequestHandledEvent）或特定于应用程序的事件。
+     *
+     * @param event the event to publish 要发布的事件
+     * @see org.springframework.web.context.support.RequestHandledEvent
+     */
+    void publishEvent(ApplicationEvent event);
 
 }
